@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/nuslog.png">
+  <title></title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+
+  <!-- Nucleo Icons -->
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+
+  <!-- CSS Files -->
+  <link id="pagestyle" href="./assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
+
+  <!-- Nepcha Analytics (nepcha.com) -->
+  <script defer data-site="DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jsqrcode/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script> -->
+
+  <style>
+    #video {
+      width: 20vw;
+      height: 20vh;
+    }
+
+    #scan-btn {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <body class="vh-100">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-10 m-auto text-center">
+          <h6>
+            Click on the Login button to scan your card and access your block
+            <div id="video-container cont">
+              <video id="video"></video>
+            </div>
+            <!--VATO, the QRhash is sent to this form, you can receive this with [form action="{% url 'login' %}"]-->
+            <!--If user is confirmed, redirect users to pages/index.html-->
+            <form id="login-form" method="post" action="">
+              <!-- {% csrf_token %} -->
+              <input type="text" id="qr_code_input" name="qr_code" placeholder="UNDEFINED" readonly>
+            </form>
+
+            <button id="scan-btn">Login</button>
+
+
+          </h6>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@2.1.0/dist/jsQR.js"></script>
+  <script src="qrscan.js"></script>
+  <script src="jsQR.js"></script>
+</body>
+
+</html>
